@@ -23,4 +23,4 @@ jobs:
         run: yarn --version
 
       - name: Install packages
-        run: yarn install --immutable
+        run: yarn install --immutable --immutable-cache --check-cache
