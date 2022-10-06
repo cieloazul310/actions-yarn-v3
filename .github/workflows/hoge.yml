@@ -10,17 +10,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set yarn version to v3
+        run: yarn set version 3.2.0
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-          cache: yarn
-      
-      - name: Check yarn version
-        run: yarn --version
-
-      - name: Set yarn version to v3
-        run: yarn set version 3.2.0
+          cache: 'yarn'
 
       - name: Check yarn v3 version
         run: yarn --version
