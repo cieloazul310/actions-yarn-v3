@@ -5,10 +5,16 @@ jobs:
     name: Set Up
     runs-on: ubuntu-latest
     steps:
+      - name: Yarn version
+        run: yarn --version
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Yarn version
+        run: yarn --version
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -20,4 +26,4 @@ jobs:
         run: yarn --version
 
       - name: Install packages
-        run: yarn install --immutable --immutable-cache --check-cache
+        run: yarn install --immutable
